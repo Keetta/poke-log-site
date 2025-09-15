@@ -1,0 +1,18 @@
+.navbar {
+    position: relative;
+    margin-top: 15px;
+    padding: 1rem;
+}
+
+.nav-indicator {
+    position: absolute;
+    height: 5px;
+    width: 0;
+    background-color: #ff5350;
+    border-radius: 10px;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.4);
+}
