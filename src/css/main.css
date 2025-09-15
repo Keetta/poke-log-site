@@ -1,0 +1,58 @@
+/*
+    main.css
+*/
+.home-page {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 15px;
+    padding: 1rem;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* home's text div */
+.home-text {
+    padding: 10px;
+    height: 100%;
+    background-color: #5f5fbb00;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+
+/* home's welcome text */
+.home-welcome {
+    font-size: 4em;
+    font-weight: 550;
+    text-wrap: nowrap;
+    margin-bottom: 20px;
+    cursor: default;
+    transition: 0.3s ease-in-out;
+}
+
+/* home's description text */
+.home-description {
+    text-align: center;
+    cursor: default;
+    width: 80%;
+    font-size: 18px;
+    font-weight: 550;
+    text-shadow: 0 0 1px #0000006b;
+    transition: 0.3s ease-in-out;
+}
+
+/* fkin celebi */
+.celebi {
+    max-width: 300px;
+    object-fit: contain;
+    flex: 1;
+    padding: 0 40px;
+}
+
+
+
+.home-welcome:hover, .home-description:hover {
+    transform: scale(1.01);
+}

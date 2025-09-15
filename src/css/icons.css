@@ -1,0 +1,66 @@
+/*
+    icons.css
+*/
+.nav-icon {
+    width: 2em;
+    height: 2em;
+    margin-right: 5px;
+    background-color: #333;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: background-color 0.3s ease;
+}
+
+/* nav icons */
+.home-icon {
+    -webkit-mask-image: url('/src/assets/icons/pikachu-icon.svg');
+    mask-image: url('/src/assets/icons/pikachu-icon.svg');
+}
+
+.pokedex-icon {
+    -webkit-mask-image: url('/src/assets/icons/pokeball-icon.svg');
+    mask-image: url('/src/assets/icons/pokeball-icon.svg');
+}
+
+.regions-icon {
+    -webkit-mask-image: url('/src/assets/icons/regions-icon.svg');
+    mask-image: url('/src/assets/icons/regions-icon.svg');
+}
+
+.games-icon {
+    -webkit-mask-image: url('/src/assets/icons/gameboy-icon.svg');
+    mask-image: url('/src/assets/icons/gameboy-icon.svg');
+}
+
+.trainer-icon {
+    -webkit-mask-image: url('/src/assets/icons/trainer-icon.svg');
+    mask-image: url('/src/assets/icons/trainer-icon.svg');
+}
+
+/* Nav's Texts Hover Animations */
+nav a:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    color: #ffffff;
+}
+
+/* Nav's Icons Hover Animations */
+nav a:hover .nav-icon {
+    background-color: #ffffff;
+}
+
+/* Nav's Active Animations & Color Changes */
+nav a.active {
+    cursor: pointer;
+    transform: scale(1.03);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+nav a.active .nav-icon {
+    background-color: #ffffff;
+}
