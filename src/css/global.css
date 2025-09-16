@@ -63,3 +63,15 @@ nav a {
     overflow: hidden;
     width: 80vw;
 }
+
+.button {
+    width: 8.1em;
+    height: 2.3em;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 550;
+    color: rgb(234, 234, 234);
+    background: #181818;
+    transition: 0.2s ease-in-out;
+}

@@ -1,9 +1,11 @@
+/* Navigation Bar's Card */
 .navbar {
     position: relative;
     margin-top: 15px;
     padding: 1rem;
 }
 
+/* Navigation Indicator */
 .nav-indicator {
     position: absolute;
     height: 5px;

@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-/* home's text div */
+/* Home's Text div */
 .home-text {
     padding: 10px;
     height: 100%;
@@ -22,7 +22,7 @@
     width: max-content;
 }
 
-/* home's welcome text */
+/* Home's Welcome Text */
 .home-welcome {
     font-size: 4em;
     font-weight: 550;
@@ -32,7 +32,7 @@
     transition: 0.3s ease-in-out;
 }
 
-/* home's description text */
+/* Home's Description Text */
 .home-description {
     text-align: center;
     cursor: default;
@@ -51,7 +51,29 @@
     padding: 0 40px;
 }
 
+/* Link Buttons */
+.home-links {
+    padding-top: 25px;
+    display: flex;
+    gap: 20px;
+}
 
+.github:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    background-color: #010029;
+}
+
+.links:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    background-color: #0932a3;
+}
+
+.button:active {
+    transform: scale(1.1);
+    transform: rotate(-3deg);
+}
 
 .home-welcome:hover, .home-description:hover {
     transform: scale(1.01);
