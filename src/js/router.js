@@ -13,6 +13,7 @@ function loadHome() {
     const template = document.getElementById("home-template");
     const clone = template.content.cloneNode(true);
     const main = document.getElementById("main-page");
+    document.body.style.background = "#1a1a1a url('/src/assets/scene/home-pageBG.png') center / cover no-repeat";
     main.innerHTML = "";
     main.appendChild(clone);
 }
@@ -23,6 +24,7 @@ function loadPokedex() {
     const template = document.getElementById("pokedex-template");
     const clone = template.content.cloneNode(true);
     const main = document.getElementById("main-page");
+    document.body.style.background = "#1a1a1a url('/src/assets/scene/pokedex-pageBG.png') center / cover no-repeat";
     main.innerHTML = "";
     main.appendChild(clone);
 }

@@ -10,7 +10,6 @@ html, body {
 body {
     font-family: 'Poppins', sans-serif; /* Use a modern sans-serif font */
     color: #333; /* Dark text for readability */
-    background: url(/src/assets/scene/home-pageBG.png) center / cover no-repeat;
 }
 
 header {
@@ -61,11 +60,13 @@ nav a {
     border-radius: 1rem;
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: rgb(0 0 0 / 50%) 0px 10px 20px;
-    overflow: hidden;
     width: 80vw;
 }
 
 .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 8.1em;
     height: 2.3em;
     border: none;
@@ -75,4 +76,10 @@ nav a {
     color: rgb(234, 234, 234);
     background: #181818;
     transition: 0.2s ease-in-out;
+    user-select: none;
+    text-decoration: none;
+}
+
+.button i {
+    padding-right: 0.5em;
 }
