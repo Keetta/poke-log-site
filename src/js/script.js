@@ -22,7 +22,6 @@
 
     links.forEach(link => {
         link.addEventListener("click", (e) => {
-        e.preventDefault();
         links.forEach(l => l.classList.remove("active"));
         link.classList.add("active");
         updateIndicator(link);
