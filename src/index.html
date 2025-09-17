@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokélog | HOME</title>
+    <title>Pokelog | HOME</title>
 
     <link rel="icon" type="image/x-icon" href="../src/assets/icons/icon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css">
@@ -11,30 +11,30 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/icons.css">
-    <link rel="stylesheet" href="./css/main.css"
+    <link rel="stylesheet" href="./css/main/home.css">
+    <link rel="stylesheet" href="./css/main/pokedex.css">
 </head>
 <body>
-
     <header>
         <div class="card navbar">
             <nav>
-                <a class="active">
+                <a href="#/" onclick="route()" class="active">
                     <div class="nav-icon home-icon"></div>
                     <span>Home</span>
                 </a>
-                <a>
+                <a href="#/Pokedex" onclick="route()">
                     <div class="nav-icon pokedex-icon"></div>
                     <span>Pokedex</span>
                 </a>
-                <a>
+                <a href="#/Regions" onclick="route()">
                     <div class="nav-icon regions-icon"></div>
                     <span>Regions</span>
                 </a>
-                <a>
+                <a href="#/Games" onclick="route()">
                     <div class="nav-icon games-icon"></div>
                     <span>Games</span>
                 </a>
-                <a>
+                <a href="#/Trainer" onclick="route()">
                     <div class="nav-icon trainer-icon"></div>
                     <span>Trainer</span>
                 </a>
@@ -43,33 +43,43 @@
         </div>
     </header>
 
-    <main>
-
-        <div class="card home-page">
-            <div class="home-text">
-                <span class="home-welcome">Welcome to Pokélog!</span>
-                <span class="home-description">
-                    Pokélog is a Pokémon-themed project developed to explore web development and
-                    design, all built from the ground up as part of my portfolio.
-                    I am Nicholas, known online as Keetta, with a strong passion for transforming concepts into
-                    functional, well-designed digital experiences.
-                    My work often involves refining user experiences, and pushing concepts beyond the basics.
-                </span>
-
-                <div class="home-links">
-                    
-                    <button class="button github">
-                        <i class="bi bi-github"></i> GitHub
-                    </button>
-                    <button class="button links">
-                        <i class="bi bi-send-plus"></i> Links
-                    </button>
-
+    <main id="root">
+        <div id="main-page"></div>
+        <template id="home-template">
+            <div class="card home-page">
+                <div class="home-text">
+                    <span class="home-welcome">Welcome to Pokelog!</span>
+                    <span class="home-description">
+                        Pokélog is a Pokémon-themed project developed to explore web development and
+                        design, all built from the ground up as part of my portfolio.
+                        I am Nicholas, known online as Keetta, with a strong passion for transforming concepts into
+                        functional, well-designed digital experiences.
+                        My work often involves refining user experiences, and pushing concepts beyond the basics.
+                    </span>
+                    <div class="home-links">
+                        <button class="button github">
+                            <i class="bi bi-github"></i> GitHub
+                        </button>
+                        <button class="button links">
+                            <i class="bi bi-send-plus"></i> Links
+                        </button>
+                    </div>
                 </div>
+                <img src="./assets/scene/celebi.gif" class="celebi">
             </div>
-            <img src="./assets/scene/celebi.gif" class="celebi">
-        </div>
+        </template>
 
+        <template id="pokedex-template">
+            <div class="card pokedex-page">
+                <span class="home-welcome">Pokedex</span>
+            </div>
+        </template>
+
+        <template id="regions-template">
+            <div class="card pokedex-page">
+                <span class="home-welcome">Regions</span>
+            </div>
+        </template>
     </main>
 
     <footer>
@@ -77,5 +87,6 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/router.js"></script>
 </body>
 </html>
