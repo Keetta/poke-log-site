@@ -57,12 +57,12 @@
                         My work often involves refining user experiences, and pushing concepts beyond the basics.
                     </span>
                     <div class="home-links">
-                        <button class="button github">
-                            <i class="bi bi-github"></i> GitHub
-                        </button>
-                        <button class="button links">
-                            <i class="bi bi-send-plus"></i> Links
-                        </button>
+                        <a href="https://github.com/Keetta/poke-log-site" class="button github" target="_blank">
+                            <i class="bi bi-github"></i>GitHub
+                        </a>
+                        <a class="button links" target="_blank">
+                            <i class="bi bi-send-plus"></i>Links
+                        </a>
                     </div>
                 </div>
                 <img src="./assets/scene/celebi.gif" class="celebi">
@@ -70,9 +70,13 @@
         </template>
 
         <template id="pokedex-template">
-            <div class="card pokedex-page">
-                <span class="home-welcome">Pokedex</span>
+
+            <div class="pokedex-search-page">
+                <div class="card pokedex-searchbar">
+                    <img src="./assets/icons/pokedex-search-icon.svg" class="pokedex-search-icon">
+                </div>
             </div>
+
         </template>
 
         <template id="regions-template">

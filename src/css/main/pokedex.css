@@ -1,0 +1,20 @@
+/*
+    pokedex.css
+*/
+.pokedex-search-page {
+    display: flex;
+    width: 65%;
+    height: 15%;
+    margin-top: 20px;
+
+}
+
+.pokedex-searchbar {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    position: relative;
+    padding: 1rem;
+    overflow: hidden;
+    background: #f0f0f0b9;
+}

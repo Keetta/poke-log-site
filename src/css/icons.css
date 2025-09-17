@@ -41,6 +41,13 @@
     mask-image: url('/src/assets/icons/trainer-icon.svg');
 }
 
+.pokedex-search-icon {
+    width: 2.4em;
+    height: 2.3em;
+    transition: 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.75));
+}
+
 /* Nav's Texts Hover Animations */
 nav a:hover {
     cursor: pointer;
@@ -63,4 +70,14 @@ nav a.active {
 
 nav a.active .nav-icon {
     background-color: #ffffff;
+}
+
+.pokedex-search-icon:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.pokedex-search-icon:active {
+    cursor: pointer;
+    transform: scale(1.1);
 }
