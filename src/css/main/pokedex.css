@@ -11,10 +11,23 @@
 
 .pokedex-searchbar {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     flex-direction: row;
     position: relative;
     padding: 1rem;
     overflow: hidden;
     background: #f0f0f0b9;
+}
+
+.pokedex-search-input {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    background: none;
+    width: 30em;
+    outline: none;
+    caret-color: #333;
 }
