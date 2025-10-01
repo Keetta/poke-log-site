@@ -24,7 +24,7 @@
         const template = document.getElementById("pokedex-template");
         const clone = template.content.cloneNode(true);
         const main = document.getElementById("main-page");
-        document.body.style.background = "#1a1a1a url('/src/assets/scene/pokedex-pageBG.png') center / cover no-repeat";
+        document.body.style.background = "#1a1a1a url('/src/assets/scene/pokedex-pageBG.png') center / cover no-repeat fixed";
         main.innerHTML = "";
         main.appendChild(clone);
     }
