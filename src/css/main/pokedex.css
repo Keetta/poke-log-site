@@ -1,10 +1,12 @@
 /*
     pokedex.css
+
+    Styles for the Pokedex page layout and search functionality.
 */
 .pokedex-search-page {
     display: flex;
     position: fixed;
-    width: 65%;
+    width: 55%;
     height: 12%;
     top: 8rem;
     left: 7.4rem;
@@ -29,14 +31,74 @@
     color: #333;
     border: none;
     background: none;
-    width: 49em;
+    width: 42em;
     outline: none;
     caret-color: #333;
 }
 
 .pokedex-list {
     display: flex;
-    width: 65%;
+    position: relative;
+    margin-top: 8px;
+    top: 13rem;
+    left: 7.4rem;
     height: 100%;
-    margin-top: 20px;
+    width: 55%;
+
+    justify-content: space-between;
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px;
+    padding: 10px;
+
+    background: #f0f0f0;
+    border-radius: 1rem;
+    box-shadow: rgb(0 0 0 / 50%) 0px 10px 20px;
+
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: bold;
+}
+
+.number {
+    color: #2e2e2e93;
+}
+
+.name {
+    color: #100c27;
+    font-size: 18px;
+}
+
+.type {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    gap: 3px;
+}
+
+.type img {
+    width: 90px;
+}
+
+.imgContainer {
+    width: 100%;
+    justify-content: center;
+}
+
+.imgContainer img {
+    width: auto;
+    height: auto;
 }

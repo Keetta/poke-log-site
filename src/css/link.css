@@ -1,0 +1,12 @@
+/*
+    link.css
+
+    Centralizes all CSS imports for easier management and cleaner HTML.
+*/
+@import url('./fonts.css');
+@import url('./header.css');
+@import url('./global.css');
+@import url('./icons.css');
+@import url('./main/home.css');
+@import url('./main/pokedex.css');
+@import url('./main/regions.css');

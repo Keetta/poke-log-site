@@ -1,0 +1,13 @@
+/*
+    regions.css
+
+    Basic layout styles for the Regions page container.
+*/
+.regions-page {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 1rem;
+    overflow: hidden;
+    margin-top: 8rem;
+}
