@@ -13,6 +13,8 @@
         const template = document.getElementById("home-template");
         const clone = template.content.cloneNode(true);
         const main = document.getElementById("main-page");
+        main.className = "home";
+
         document.body.style.background = "#1a1a1a url('/src/assets/scene/home-pageBG.png') center / cover no-repeat";
         main.innerHTML = "";
         main.appendChild(clone);
@@ -24,6 +26,8 @@
         const template = document.getElementById("pokedex-template");
         const clone = template.content.cloneNode(true);
         const main = document.getElementById("main-page");
+        main.className = "pokedex";
+
         document.body.style.background = "#1a1a1a url('/src/assets/scene/pokedex-pageBG.png') center / cover no-repeat fixed";
         main.innerHTML = "";
         main.appendChild(clone);
@@ -35,6 +39,8 @@
         const template = document.getElementById("regions-template");
         const clone = template.content.cloneNode(true);
         const main = document.getElementById("main-page");
+        main.className = "regions";
+
         main.innerHTML = "";
         main.appendChild(clone);
     }

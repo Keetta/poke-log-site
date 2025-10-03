@@ -1,5 +1,7 @@
 /*
     global.css
+
+    Basic global styles for layout, typography, and common components.
 */
 html, body {
   height: 100vh;
@@ -22,9 +24,7 @@ header {
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    height: 80vh;
+    min-height: 100vh;
 }
 
 footer {
@@ -89,4 +89,18 @@ nav a {
 
 .button i {
     padding-right: 0.5em;
+}
+
+#main-page.home {
+    display: flex;
+    justify-content: center;
+}
+
+#main-page.pokedex {
+    display: flex;
+}
+
+#main-page.regions {
+    display: flex;
+    justify-content: center;
 }

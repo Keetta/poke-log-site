@@ -7,12 +7,7 @@
 
     <link rel="icon" type="image/x-icon" href="../src/assets/icons/icon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/icons.css">
-    <link rel="stylesheet" href="./css/main/home.css">
-    <link rel="stylesheet" href="./css/main/pokedex.css">
+    <link rel="stylesheet" href="./css/link.css">
 </head>
 <body>
     <header>
@@ -78,15 +73,52 @@
                 </div>
             </div>
 
-            <div class="pokedex-list">
+            <div class="card pokedex-list">
+                <div class="card pokemon">
+                    <div class="imgContainer">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif">
+                    </div>
 
+                    <div class="pokemon-info">
+                        <span class="number">N°01</span>
+                        <span class="name">Bulbasaur</span>
+                        <span class="type">Grass / Poison</span>
+                    </div>
+                </div>
+
+                <div class="card pokemon">
+                    <div class="imgContainer">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif">
+                    </div>
+
+                    <div class="pokemon-info">
+                        <span class="number">N°02</span>
+                        <span class="name">Ivysaur</span>
+                        <span class="type">Grass / Poison</span>
+                    </div>
+                </div>
+
+                <div class="card pokemon">
+                    <div class="imgContainer">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif">
+                    </div>
+
+                    <div class="pokemon-info">
+                        <span class="number">N°03</span>
+                        <span class="name">Venusaur</span>
+                        <div class="type">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/12.png">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/4.png">
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </template>
 
         <template id="regions-template">
-            <div class="card pokedex-page">
-                <span class="home-welcome">Regions</span>
+            <div class="card regions-page">
+                <span>Regions</span>
             </div>
         </template>
     </main>
