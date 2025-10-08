@@ -68,6 +68,8 @@
 
     height: auto;
     width: auto;
+
+    transition: 0.2s ease-in-out;
 }
 
 .pokemon-info {
@@ -92,6 +94,7 @@
     width: 100%;
     height: auto;
     gap: 3px;
+    user-select: none;
 }
 
 .type img {
@@ -111,4 +114,14 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    user-select: none;
+}
+
+.pokemon:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.pokemon:active {
+    transform: scale(1.06);
 }
