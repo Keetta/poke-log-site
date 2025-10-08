@@ -31,6 +31,10 @@
         document.body.style.background = "#1a1a1a url('/src/assets/scene/pokedex-pageBG.png') center / cover no-repeat fixed";
         main.innerHTML = "";
         main.appendChild(clone);
+
+        if (typeof window.initPokedex === "function") {
+            window.initPokedex();
+        }
     }
 
     // Load Regions's Page

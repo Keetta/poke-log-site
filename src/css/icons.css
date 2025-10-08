@@ -48,6 +48,7 @@
     height: 2.3em;
     transition: 0.3s ease;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.75));
+    user-select: none;
 }
 
 /* Nav's Texts Hover Animations */
@@ -80,6 +81,5 @@ nav a.active .nav-icon {
 }
 
 .pokedex-search-icon:active {
-    cursor: pointer;
     transform: scale(1.1);
 }
