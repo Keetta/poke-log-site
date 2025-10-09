@@ -2,7 +2,7 @@
 
     window.initPokedex = function() {
     const pokeContainer = document.querySelector("#pokeContainer");
-    const pokemonCount = 151;
+    const pokemonCount = 1025;
 
     const typeIds = {
         normal: 1,
@@ -40,7 +40,7 @@
         createPokemonCard(data);
     };
 
-    const createPokemonCard = (poke) => {
+        const createPokemonCard = (poke) => {
         const card = document.createElement('div');
         card.classList.add('card', 'pokemon');
 
@@ -49,28 +49,35 @@
 
         const pokeTypes = poke.types.map(type => type.type.name);
 
-        const pokeImg = poke.sprites.versions['generation-v']['black-white'].animated.front_default || poke.sprites.front_default;
+        let pokeImg = poke.sprites.versions['generation-v']?.['black-white']?.animated?.front_default;
+
+        if (!pokeImg) {
+            pokeImg = `https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/pokemon/other/showdown/${poke.id}.gif`;
+        }
+
+        const fallbackImg = poke.sprites.front_default;
 
         const typeImages = pokeTypes.map(type => {
-        const typeId = typeIds[type];
-        return `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/${typeId}.png" alt="${type}" title="${type}">`;
+            const typeId = typeIds[type];
+            return `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/${typeId}.png" alt="${type}" title="${type}">`;
         }).join('');
 
         card.innerHTML = `
         <div class="imgContainer">
-            <img src="${pokeImg}" alt="${name}">
+            <img src="${pokeImg}" alt="${name}" onerror="this.onerror=null; this.src='${fallbackImg}'">
         </div>
         <div class="pokemon-info">
             <span class="number">N°${id}</span>
             <span class="name">${name}</span>
             <div class="type">
-            ${typeImages}
+                ${typeImages}
             </div>
         </div>
         `;
 
         pokeContainer.appendChild(card);
     };
+
 
     fetchPokemons();
     };

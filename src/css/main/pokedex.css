@@ -95,6 +95,7 @@
     height: auto;
     gap: 3px;
     user-select: none;
+    justify-content: center;
 }
 
 .type img {
@@ -108,6 +109,39 @@
     width: 100%;
     justify-content: center;
     overflow: hidden;
+}
+
+.activePokemon {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+
+    top: 8rem;
+    right: 7.4rem;
+    bottom: 0;
+    width: 26%;
+}
+
+.activeImgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10em;
+}
+
+.activePokemon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.activeImgContainer img {
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
 }
 
 .imgContainer img {
