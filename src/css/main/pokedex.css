@@ -159,3 +159,19 @@
 .pokemon:active {
     transform: scale(1.06);
 }
+
+@media screen and (min-width: 1366px) and (min-height: 700px) {
+    .pokedex-search-page {
+        height: 11%;
+        left: 8.4rem;
+    }
+
+    .pokedex-list {
+        margin-top: 18px;
+        left: 8.3rem;
+    }
+
+    .activePokemon {
+        right: 8.4rem;
+    }
+}
