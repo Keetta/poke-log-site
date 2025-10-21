@@ -6,9 +6,8 @@
 .pokedex-search-page {
     z-index: 5;
     display: flex;
-    position: fixed;
+    position: relative;
     width: 55%;
-    height: 12%;
     top: 8rem;
     left: 7.4rem;
 }
@@ -18,10 +17,10 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    position: relative;
     padding-inline: 1rem;
     overflow: hidden;
     background: #f0f0f0e0;
+    height: 3.5em;
 }
 
 .pokedex-search-input {
@@ -42,7 +41,7 @@
     grid-template-columns: repeat(auto-fill, minmax(214px, 1fr));
     position: fixed;
     margin-top: 8px;
-    top: 13rem;
+    top: 16.8rem;
     left: 7.4rem;
     bottom: 0;
     width: 55%;
@@ -57,8 +56,8 @@
     justify-content: center;
     align-items: center;
 
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 4px;
 
     background: #f0f0f0;
     border-radius: 1rem;
@@ -90,7 +89,7 @@
 
 .type {
     display: flex;
-    margin-top: 10px;
+    margin-top: 3px;
     width: 100%;
     height: auto;
     gap: 3px;
@@ -174,4 +173,10 @@
     .activePokemon {
         right: 8.4rem;
     }
+}
+
+/* FILTER */
+
+.pokedex-filter {
+    display: flex;
 }
