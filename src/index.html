@@ -80,6 +80,38 @@
                 </div>
             </div>
 
+            <div class="pokedex-filter-container">
+                <div class="card pokedex-filter">
+                    <button id="filterToggle" class="filter-btn">
+                        <i class="bi bi-funnel"></i>
+                    </button>
+
+                    <div class="filter-options" id="filterOptions">
+                        <button class="filter-icon" title="Sort by A-Z" style="--order: 1">
+                            <i class="bi bi-sort-alpha-down"></i>
+                        </button>
+                        <button class="filter-icon" title="Sort by Z-A" style="--order: 2">
+                            <i class="bi bi-sort-alpha-up"></i>
+                        </button>
+                        <button class="filter-icon" id="filterGen" title="Filter by Generation" style="--order: 3">
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="filter-gen-popup" id="filterGenPopup">
+                    <div class="gen-option" data-gen="1">Gen 1</div>
+                    <div class="gen-option" data-gen="2">Gen 2</div>
+                    <div class="gen-option" data-gen="3">Gen 3</div>
+                    <div class="gen-option" data-gen="4">Gen 4</div>
+                    <div class="gen-option" data-gen="5">Gen 5</div>
+                    <div class="gen-option" data-gen="6">Gen 6</div>
+                    <div class="gen-option" data-gen="7">Gen 7</div>
+                    <div class="gen-option" data-gen="8">Gen 8</div>
+                    <div class="gen-option" data-gen="9">Gen 9</div>
+                </div>
+            </div>
+
             <div id="pokeContainer" class="card pokedex-list">
                 <div class="card pokemon">
                     <div class="imgContainer">
@@ -133,9 +165,10 @@
         <span>keetta</span>
     </footer>
 
-    <script src="./js/script.js" type="module" async defer></script>
-    <script src="./js/router.js" type="module" async defer></script>
-    <script src="./js/pokedex.js" type="module" async defer></script>
+    <script src="./js/script.js" defer></script>
+    <script src="./js/router.js" defer></script>
+    <script src="./js/pokedex.js" defer></script>
+    <script src="./js/filters.js" defer></script>
     <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js" type="module" async defer></script>
 </body>
 </html>

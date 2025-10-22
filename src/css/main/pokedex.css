@@ -31,7 +31,7 @@
     color: #333;
     border: none;
     background: none;
-    width: 42em;
+    width: 47em;
     outline: none;
     caret-color: #333;
 }
@@ -66,7 +66,7 @@
     text-align: center;
 
     height: auto;
-    width: auto;
+    width: 256px;
 
     transition: 0.2s ease-in-out;
 }
@@ -167,16 +167,108 @@
 
     .pokedex-list {
         margin-top: 18px;
-        left: 8.3rem;
+        left: 8.4rem;
     }
 
     .activePokemon {
         right: 8.4rem;
     }
+
+    .pokedex-filter-container {
+        left: 8.4rem;
+    }
 }
 
 /* FILTER */
 
+.pokedex-filter-container {
+    display: flex;
+    position: absolute;
+    width: 55%;
+    height: 5rem;
+    top: 12.3rem;
+    left: 8.4rem;
+    text-wrap: nowrap;
+}
+
 .pokedex-filter {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-inline: 1rem;
+}
+
+.filter-btn {
+    background: #f0f0f048;
+    backdrop-filter: blur(7px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 0.4rem 0.5rem 0.3rem 0.5rem;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: #333;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.filter-btn:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.filter-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.pokedex-filter.expanded .filter-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.filter-icon {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: calc(var(--order) * 100ms);
+}
+
+.pokedex-filter.expanded .filter-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filter-gen-popup {
+    display: none;
+    position: absolute;
+    top: 6.5rem;
+    left: 8rem;
+    background: #44444490;
+    backdrop-filter: blur(7px);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    z-index: 100;
+}
+
+.filter-gen-popup.active {
+    display: flex;
+}
+
+.gen-option {
+    color: #f5f5f5;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.3rem;
+    transition: 0.2s ease-in-out;
+}
+
+.gen-option:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }

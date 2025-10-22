@@ -35,6 +35,10 @@
         if (typeof window.initPokedex === "function") {
             window.initPokedex();
         }
+
+        if (typeof window.initFilters === "function") {
+            window.initFilters();
+        }
     }
 
     // Load Regions's Page
