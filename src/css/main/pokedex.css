@@ -252,6 +252,19 @@
     justify-content: center;
 }
 
+.filter-icon.active-filter i {
+    transform: scale(1.2);
+    color: #fff;
+    text-shadow: 0 0 8px #f0f0f0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.filter-icon.active-filter img {
+    filter: brightness(10) drop-shadow(0 0 8px #f0f0f0);
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
 .pokedex-filter.expanded .filter-icon {
     opacity: 1;
     transform: translateY(0);
@@ -262,7 +275,7 @@
     position: absolute;
     top: 5rem;
     left: 2rem;
-    background: #44444490;
+    background: #68686890;
     backdrop-filter: blur(7px);
     border-radius: 0.5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -270,8 +283,6 @@
     flex-wrap: wrap;
     gap: 0.3rem;
     z-index: 100;
-
-    pointer-events: none;
 }
 
 .filter-gen-popup.active {
@@ -294,5 +305,4 @@
 
 .pokedex-filter.expanded .filter-icon:hover {
     cursor: pointer;
-    transform: scale(1.1);
 }
