@@ -3,6 +3,7 @@ window.initFilters = function () {
     const pokedexFilter = document.querySelector('.pokedex-filter');
     const filterGenBtn = document.getElementById('filterGen');
     const filterGenPopup = document.getElementById('filterGenPopup');
+    const filterIcons = document.querySelectorAll('.filter-icon');
 
     filterToggle.addEventListener('click', () => {
         pokedexFilter.classList.toggle('expanded');
@@ -17,6 +18,18 @@ window.initFilters = function () {
         if (!pokedexFilter.contains(e.target) && !filterGenPopup.contains(e.target)) {
         filterGenPopup.classList.remove('active');
         pokedexFilter.classList.remove('expanded');
-    }
+        }
     });
+
+    filterIcons.forEach(btn => {
+        btn.addEventListener('click', () => {
+
+            if (btn.classList.contains('active-filter')) {
+                btn.classList.remove('active-filter')
+                return;
+            }
+            filterIcons.forEach(b => b.classList.remove('active-filter'));
+            btn.classList.add('active-filter');
+        })
+    })
 }
