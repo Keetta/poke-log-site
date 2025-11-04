@@ -3,6 +3,7 @@
     window.initPokedex = function() {
     const pokeContainer = document.querySelector("#pokeContainer");
     const pokemonCount = 1025;
+    let allPokemons = [];
 
     const typeIds = {
         normal: 1,
@@ -37,6 +38,8 @@
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const resp = await fetch(url);
         const data = await resp.json();
+
+        allPokemons.push(data);
         createPokemonCard(data);
     };
 
@@ -78,6 +81,28 @@
         pokeContainer.appendChild(card);
     };
 
+    const renderPokemons = (pokemons) => {
+        pokeContainer.innerHTML = '';
+        pokemons.forEach(poke => createPokemonCard(poke));
+    };
+
+    const sortPokemonsAZ = () => {
+        const sorted = [...allPokemons].sort((a, b) => a.name.localeCompare(b.name));
+        renderPokemons(sorted);
+    };
+
+    const sortPokemonsZA = () => {
+        const sorted = [...allPokemons].sort((a, b) => b.name.localeCompare(a.name));
+        renderPokemons(sorted);
+    };
+
+    const resetPokedex = () => {
+        renderPokemons(allPokemons);
+    };
+
+    window.sortPokemonsZA = sortPokemonsZA;
+    window.sortPokemonsAZ = sortPokemonsAZ;
+    window.resetPokedex = resetPokedex;
 
     fetchPokemons();
     };
