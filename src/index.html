@@ -93,17 +93,14 @@
                         <button id="filterZA" class="filter-icon" title="Sort by Z-A" style="--order: 2">
                             <img src="./assets/icons/sort-z-a.svg" style="width: 42px; height: 42px;">
                         </button>
-                        <button class="filter-icon" title="Sort Desc" style="--order: 4">
+                        <button id="filterDesc" class="filter-icon" title="Sort Desc" style="--order: 4">
                             <i class="bi bi-sort-numeric-up"></i>
                         </button>
                         <button class="filter-icon" id="filterGen" title="Filter by Generation" style="--order: 5">
                             <img src="./assets/icons/gen-icon 1.svg" style="width: 32px; height: 32px;">
                         </button>
-                        <button class="filter-icon" title="Filter by Type" style="--order: 6">
+                        <button id="filterType" class="filter-icon" title="Filter by Type" style="--order: 6">
                             <i class="bi bi-fire"></i>
-                        </button>
-                        <button class="filter-icon" title="Filter by Region" style="--order: 7">
-                            <i class="bi bi-globe-americas"></i>
                         </button>
 
                     </div>
@@ -119,6 +116,29 @@
                     <div class="gen-option" data-gen="7">Gen 7</div>
                     <div class="gen-option" data-gen="8">Gen 8</div>
                     <div class="gen-option" data-gen="9">Gen 9</div>
+                    <div class="gen-option"><i class="bi bi-x-lg"></i> CLEAR</div>
+                </div>
+
+                <div class="filter-type-popup" id="filterTypePopup">
+                    <div class="type-option" data-type="normal"><i class="bi bi-star-fill"></i> Normal</div>
+                    <div class="type-option" data-type="fire"><i class="bi bi-fire"></i> Fire</div>
+                    <div class="type-option" data-type="water"><i class="bi bi-droplet-fill"></i> Water</div>
+                    <div class="type-option" data-type="grass"><i class="bi bi-leaf-fill"></i> Grass</div>
+                    <div class="type-option" data-type="electric"><i class="bi bi-lightning-charge-fill"></i> Electric</div>
+                    <div class="type-option" data-type="ice"><i class="bi bi-snow2"></i> Ice</div>
+                    <div class="type-option" data-type="fighting"><i class="bi bi-brilliance"></i> Fighting</div>
+                    <div class="type-option" data-type="poison"><i class="bi bi-x-octagon"></i> Poison</div>
+                    <div class="type-option" data-type="ground"><i class="bi bi-pentagon-fill"></i> Ground</div>
+                    <div class="type-option" data-type="flying"><i class="bi bi-feather"></i> Flying</div>
+                    <div class="type-option" data-type="psychic"><i class="bi bi-eye"></i> Psychic</div>
+                    <div class="type-option" data-type="bug"><i class="bi bi-bug-fill"></i> Bug</div>
+                    <div class="type-option" data-type="rock"><i class="bi bi-square-fill"></i> Rock</div>
+                    <div class="type-option" data-type="ghost"><i class="bi bi-snapchat"></i> Ghost</div>
+                    <div class="type-option" data-type="dragon"><i class="bi bi-wind"></i> Dragon</div>
+                    <div class="type-option" data-type="dark"><i class="bi bi-mask"></i> Dark</div>
+                    <div class="type-option" data-type="steel"><i class="bi bi-triangle-half"></i> Steel</div>
+                    <div class="type-option" data-type="fairy"><i class="bi bi-bluesky"></i> Fairy</div>
+                    <div class="type-option"><i class="bi bi-x-lg"></i> CLEAR</div>
                 </div>
             </div>
 

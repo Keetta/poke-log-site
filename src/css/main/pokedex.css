@@ -285,7 +285,27 @@
     z-index: 100;
 }
 
+.filter-type-popup {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: 2rem;
+    background: #68686890;
+    backdrop-filter: blur(7px);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    z-index: 100;
+    justify-content: center;
+}
+
 .filter-gen-popup.active {
+    display: flex;
+}
+
+.filter-type-popup.active {
     display: flex;
 }
 
@@ -297,7 +317,21 @@
     transition: 0.2s ease-in-out;
 }
 
+.type-option {
+    color: #333;
+    font-weight: bold;
+    padding: 0.1rem 0.7rem;
+    border-radius: 0.3rem;
+    transition: 0.2s ease-in-out;
+}
+
 .gen-option:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    color: #f5f5f5;
+}
+
+.type-option:hover {
     cursor: pointer;
     transform: scale(1.05);
     color: #f5f5f5;
@@ -306,3 +340,22 @@
 .pokedex-filter.expanded .filter-icon:hover {
     cursor: pointer;
 }
+
+.type-option[data-type="normal"]:hover { color: #e0dec5; }
+.type-option[data-type="fire"]:hover { color: #ff8d1a; }
+.type-option[data-type="water"]:hover { color: #8fc4ff; }
+.type-option[data-type="grass"]:hover { color: #3caf25; }
+.type-option[data-type="electric"]:hover { color: #ffeb32; }
+.type-option[data-type="ice"]:hover { color: #b3f2f0; }
+.type-option[data-type="fighting"]:hover { color: #ff3729; }
+.type-option[data-type="poison"]:hover { color: #9d00a8; }
+.type-option[data-type="ground"]:hover { color: #7a4e00; }
+.type-option[data-type="flying"]:hover { color: #f7f4ff; }
+.type-option[data-type="psychic"]:hover { color: #ff15eb; }
+.type-option[data-type="bug"]:hover { color: #1f4b1f; }
+.type-option[data-type="rock"]:hover { color: #606141; }
+.type-option[data-type="ghost"]:hover { color: #3d3d3d; }
+.type-option[data-type="dragon"]:hover { color: #5500ff; }
+.type-option[data-type="dark"]:hover { color: #2c2c2c; }
+.type-option[data-type="steel"]:hover { color: #c7c7c7; }
+.type-option[data-type="fairy"]:hover { color: #eb56ff; }
