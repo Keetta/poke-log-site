@@ -2,7 +2,7 @@
 
     window.initPokedex = function() {
     const pokeContainer = document.querySelector("#pokeContainer");
-    const pokemonCount = 1025;
+    const pokemonCount = 500;
     let allPokemons = [];
 
     const typeIds = {
@@ -24,6 +24,18 @@
         dragon: 16,
         dark: 17,
         fairy: 18
+    };
+
+    const generationRanges = {
+        1: [1, 151],
+        2: [152, 251],
+        3: [252, 386],
+        4: [387, 493],
+        5: [494, 649],
+        6: [650, 721],
+        7: [722, 809],
+        8: [810, 905],
+        9: [906, 1025]
     };
 
         const fetchPokemons = async () => {
@@ -96,12 +108,33 @@
         renderPokemons(sorted);
     };
 
+    const filterByGen = (genNumber) => {
+        const [start, end] = generationRanges[genNumber];
+        const filtered = allPokemons.filter(poke => poke.id >= start && poke.id <= end);
+        renderPokemons(filtered);
+    };
+
+    const sortPokemonsByNumberDesc = () => {
+        const sorted = [...allPokemons].sort((a, b) => b.id - a.id);
+        renderPokemons(sorted);
+    };
+
+    const filterByType = (typeName) => {
+        const filtered = allPokemons.filter(poke =>
+            poke.types.some(t => t.type.name === typeName)
+        );
+        renderPokemons(filtered);
+    };
+
     const resetPokedex = () => {
         renderPokemons(allPokemons);
     };
 
     window.sortPokemonsZA = sortPokemonsZA;
     window.sortPokemonsAZ = sortPokemonsAZ;
+    window.sortPokemonsByNumberDesc = sortPokemonsByNumberDesc;
+    window.filterByGen = filterByGen;
+    window.filterByType = filterByType;
     window.resetPokedex = resetPokedex;
 
     fetchPokemons();
