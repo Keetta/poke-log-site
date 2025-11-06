@@ -2,7 +2,7 @@
 
     window.initPokedex = function() {
     const pokeContainer = document.querySelector("#pokeContainer");
-    const pokemonCount = 500;
+    const pokemonCount = 151;
     let allPokemons = [];
 
     const typeIds = {
@@ -40,6 +40,8 @@
 
         const fetchPokemons = async () => {
         pokeContainer.innerHTML = '';
+
+        setActivePokemon(1);
 
         for (let i = 1; i <= pokemonCount; i++) {
         await getPokemons(i);
@@ -90,6 +92,8 @@
         </div>
         `;
 
+        card.addEventListener('click', () => setActivePokemon(poke.id));
+
         pokeContainer.appendChild(card);
     };
 
@@ -129,6 +133,94 @@
     const resetPokedex = () => {
         renderPokemons(allPokemons);
     };
+
+    const setActivePokemon = async (id) => {
+        const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+
+        const [pokemonResp, speciesResp] = await Promise.all([
+            fetch(pokemonUrl),
+            fetch(speciesUrl)
+        ]);
+
+        const pokemonData = await pokemonResp.json();
+        const speciesData = await speciesResp.json();
+
+        const category = speciesData.genera.find(gen => gen.language.name === "en")?.genus || "Unknown";
+
+        // Pokédex Entry
+        const description = speciesData.flavor_text_entries.find(entry => entry.language.name === "en")?.flavor_text.replace(/\f/g, ' ') || "No description available.";
+
+        const abilities = pokemonData.abilities.map(a => a.ability.name).join(', ');
+
+        const height = pokemonData.height / 10;
+        const weight = pokemonData.weight / 10;
+
+        // Evolutions
+        const evoUrl = speciesData.evolution_chain.url;
+        const evoResp = await fetch(evoUrl);
+        const evoData = await evoResp.json();
+
+        const evolutionNames = [];
+        let current = evoData.chain;
+        do {
+            evolutionNames.push(current.species.name);
+            current = current.evolves_to[0];
+        } while (current);
+
+        renderActivePokemon({
+            name: pokemonData.name,
+            id: pokemonData.id,
+            types: pokemonData.types.map(t => t.type.name),
+            sprite: pokemonData.sprites.other['official-artwork'].front_default,
+            category,
+            description,
+            abilities,
+            height,
+            weight,
+            evolution: evolutionNames
+        });
+    };
+
+    const renderActivePokemon = (poke) => {
+        const activeCard = document.querySelector('.activePokemon');
+        if (!activeCard) return;
+
+        const activeImg = activeCard.querySelector('.activeImgContainer img');
+        activeImg.src = poke.sprite;
+        activeImg.alt = poke.name;
+
+        const typeContainer = activeCard.querySelector('.type');
+        typeContainer.innerHTML = poke.types.map(type => {
+            const typeId = typeIds[type];
+            return `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/${typeId}.png" alt="${type}" title="${type}">`;
+        }).join('');
+
+        activeCard.querySelector('.name').textContent = poke.name[0].toUpperCase() + poke.name.slice(1);
+        activeCard.querySelector('.number').textContent = `N°${poke.id.toString().padStart(3, '0')}`;
+
+        activeCard.querySelector('.pokedexDescription').textContent = poke.description;
+
+        let extraInfo = activeCard.querySelector('.extraInfo');
+        if (!extraInfo) {
+            extraInfo = document.createElement('div');
+            extraInfo.classList.add('extraInfo');
+            activeCard.querySelector('.activePokemon-info').appendChild(extraInfo);
+        }
+
+        extraInfo.innerHTML = `
+        <div class="abilitiesContainer">
+            <p>Abilities:</p>
+            <div class="abilities">${poke.abilities}</div>
+        </div>
+            <p class="height">Height: ${poke.height} m</p>
+            <p class="weight">Weight: ${poke.weight} kg</p>
+            <p class="evolutions">Evolution Line: ${poke.evolution.join(' → ')}</p>
+            <p class="category">${poke.category}</p>
+        `;
+    }; /* Estiliza os bglh lá malandro */
+
+
 
     window.sortPokemonsZA = sortPokemonsZA;
     window.sortPokemonsAZ = sortPokemonsAZ;
