@@ -89,7 +89,7 @@
 
 .type {
     display: flex;
-    margin-top: 3px;
+    margin-bottom: 5px;
     width: 100%;
     height: auto;
     gap: 3px;
@@ -168,10 +168,9 @@
 
 .description {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0px 15px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 15px;
     transition: 0.2s ease-in;
 }
@@ -181,6 +180,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: 3px;
+    font-weight: 400;
+    color: #f0f0f0;
+}
+
+.extraInfo {
+    letter-spacing: 1px;
 }
 
 .abilitiesContainer {
@@ -191,12 +197,38 @@
     text-align: center;
 }
 
+.abilities {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.ability {
+    font-size: 15px;
+    background-color: #f0f0f0;
+    border: solid 2px #a0a0a0;
+    border-radius: 25px;
+    padding: 4px 18px
+}
+
 .infoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.hwContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5em;
 }
 
 .description:hover {

@@ -38,6 +38,20 @@
         9: [906, 1025]
     };
 
+    const formatText = (str) => {
+        if (!str) return "";
+
+        let formatted = str.toLowerCase();
+
+        if (formatted.includes("nidoran-f")) return "Nidoran ♀";
+        if (formatted.includes("nidoran-m")) return "Nidoran ♂";
+
+        formatted = formatted.replace(/-/g, " ");
+        formatted = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+
+        return formatted;
+    };
+
         const fetchPokemons = async () => {
         pokeContainer.innerHTML = '';
 
@@ -61,7 +75,7 @@
         const card = document.createElement('div');
         card.classList.add('card', 'pokemon');
 
-        const name = poke.name[0].toUpperCase() + poke.name.slice(1);
+        const name = formatText(poke.name);
         const id = poke.id.toString().padStart(3, '0');
 
         const pokeTypes = poke.types.map(type => type.type.name);
@@ -151,7 +165,7 @@
         // Pokédex Entry
         const description = speciesData.flavor_text_entries.find(entry => entry.language.name === "en")?.flavor_text.replace(/\f/g, ' ') || "No description available.";
 
-        const abilities = pokemonData.abilities.map(a => a.ability.name).join(', ');
+        const abilities = pokemonData.abilities.map(a => formatText(a.ability.name));
 
         const height = pokemonData.height / 10;
         const weight = pokemonData.weight / 10;
@@ -164,7 +178,7 @@
         const evolutionNames = [];
         let current = evoData.chain;
         do {
-            evolutionNames.push(current.species.name);
+            evolutionNames.push(formatText(current.species.name));
             current = current.evolves_to[0];
         } while (current);
 
@@ -196,7 +210,7 @@
             return `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/${typeId}.png" alt="${type}" title="${type}">`;
         }).join('');
 
-        activeCard.querySelector('.name').textContent = poke.name[0].toUpperCase() + poke.name.slice(1);
+        activeCard.querySelector('.name').textContent = formatText(poke.name);
         activeCard.querySelector('.number').textContent = `N°${poke.id.toString().padStart(3, '0')}`;
 
         activeCard.querySelector('.pokedexDescription').textContent = poke.description;
@@ -211,17 +225,28 @@
         extraInfo.innerHTML = `
         <p class="category">${poke.category}</p>
         <div class="abilitiesContainer">
-            <p>Abilities:</p>
-            <div class="abilities">${poke.abilities}</div>
+            <p>ABILITIES</p>
+            <div class="abilities">
+                ${poke.abilities.map(ability => `<div class="ability">${ability}</div>`).join('')}
+            </div>
         </div>
 
         <div class="infoContainer">
-            <p class="height">Height: ${poke.height} m</p>
-            <p class="weight">Weight: ${poke.weight} kg</p>
-            <p class="evolutions">Evolution Line: ${poke.evolution.join(' → ')}</p>
+            <div class="hwContainer">
+                <div class="heightInfo">
+                    <p>HEIGHT</p>
+                    <p class="height">${poke.height} m</p>
+                </div>
+
+                <div class="weightInfo">
+                    <p>WEIGHT</p>
+                    <p class="weight">${poke.weight} kg</p>
+                </div>
+            </div>
+            <p class="evolutions">EVOLUTION ${poke.evolution.join(' → ')}</p>
         </div>
         `;
-    }; /* Estiliza os bglh lá malandro */
+    };
 
 
 

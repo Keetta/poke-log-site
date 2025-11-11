@@ -118,3 +118,7 @@ nav a {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #ffffffc2;
 }
+
+p {
+    margin: 0;
+}
