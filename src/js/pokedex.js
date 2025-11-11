@@ -209,14 +209,17 @@
         }
 
         extraInfo.innerHTML = `
+        <p class="category">${poke.category}</p>
         <div class="abilitiesContainer">
             <p>Abilities:</p>
             <div class="abilities">${poke.abilities}</div>
         </div>
+
+        <div class="infoContainer">
             <p class="height">Height: ${poke.height} m</p>
             <p class="weight">Weight: ${poke.weight} kg</p>
             <p class="evolutions">Evolution Line: ${poke.evolution.join(' → ')}</p>
-            <p class="category">${poke.category}</p>
+        </div>
         `;
     }; /* Estiliza os bglh lá malandro */
 
