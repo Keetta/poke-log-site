@@ -243,7 +243,10 @@
                     <p class="weight">${poke.weight} kg</p>
                 </div>
             </div>
-            <p class="evolutions">EVOLUTION ${poke.evolution.join(' → ')}</p>
+                <div class="evoInfo">
+                        <p>EVOLUTION</p>
+                        <p class="evolutions">${poke.evolution.join(' → ')}</p>
+                </div>
         </div>
         `;
     };
