@@ -213,7 +213,10 @@
         activeCard.querySelector('.name').textContent = formatText(poke.name);
         activeCard.querySelector('.number').textContent = `N°${poke.id.toString().padStart(3, '0')}`;
 
-        activeCard.querySelector('.pokedexDescription').textContent = poke.description;
+        const descEl = activeCard.querySelector('.pokedexDescription');
+            descEl.textContent = poke.description;
+
+            fitText(descEl, 11, 15);
 
         let extraInfo = activeCard.querySelector('.extraInfo');
         if (!extraInfo) {
@@ -234,12 +237,12 @@
         <div class="infoContainer">
             <div class="hwContainer">
                 <div class="heightInfo">
-                    <p>HEIGHT</p>
+                    <p class="hwTitle">HEIGHT</p>
                     <p class="height">${poke.height} m</p>
                 </div>
 
                 <div class="weightInfo">
-                    <p>WEIGHT</p>
+                    <p class="hwTitle">WEIGHT</p>
                     <p class="weight">${poke.weight} kg</p>
                 </div>
             </div>
@@ -251,6 +254,15 @@
         `;
     };
 
+    function fitText(element, minSize = 12, maxSize = 14) {
+        let fontSize = maxSize;
+        element.style.fontSize = fontSize + "px";
+
+        while (element.scrollHeight > element.clientHeight && fontSize > minSize) {
+            fontSize -= 0.5;
+            element.style.fontSize = fontSize + "px";
+        }
+    }
 
 
     window.sortPokemonsZA = sortPokemonsZA;
