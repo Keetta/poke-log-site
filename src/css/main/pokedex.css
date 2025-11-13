@@ -169,10 +169,12 @@
 
 .description {
     display: flex;
+    align-items: center;
+    height: 40px;
     padding: 0px 15px;
     text-align: center;
     font-weight: 500;
-    font-size: 15px;
+    line-height: 1.2;
     transition: 0.2s ease-in;
 }
 
@@ -181,9 +183,12 @@
     flex-direction: column;
     letter-spacing: 1px;
     background-color: #f0f0f0;
+    font-size: 14px;
     border-radius: 20px;
-    margin: 10px 5px;
-    padding: 10px 10px;
+    margin-top: 7px;
+    padding: 10px 0px;
+    width: 25em;
+    height: 15.2em;
     box-sizing: border-box;
 }
 
@@ -193,6 +198,7 @@
     justify-content: center;
     text-align: center;
     font-weight: 600;
+    font-size: 13px;
     color: #2e2e2e93;
 }
 
@@ -202,7 +208,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 
 .abilities {
@@ -215,12 +221,12 @@
 }
 
 .ability {
-    font-size: 13px;
+    font-size: 10px;
     color: #333;
     background-color: #f0f0f0;
     border: solid 2px #d6d6d6;
     border-radius: 25px;
-    padding: 4px 16px;
+    padding: 3px 14px;
     text-wrap: nowrap;
 }
 
@@ -238,7 +244,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 5em;
+    gap: 7em;
+}
+
+.hwTitle {
+    font-size: 12px;
+}
+
+.height, .weight {
+    border-radius: 30px;
+    margin-top: 4px;
+    padding: 4px 25px;
+    background-color: #e4e4e4;
 }
 
 .description:hover {
@@ -452,5 +469,27 @@
         left: 8.4rem;
         top: 12.3rem;
         height: 5rem;
+    }
+
+    .description {
+        padding: 0px 15px;
+    }
+
+    .extraInfo {
+        margin: 10px 5px;
+        padding: 10px 10px;
+    }
+
+    .category {
+        font-size: 15px;
+    }
+
+    .abilitiesContainer {
+        margin: 10px 0px;
+    }
+
+    .ability {
+        font-size: 13px;
+        padding: 4px 16px;
     }
 }
