@@ -236,6 +236,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    text-wrap: nowrap;
 }
 
 .hwContainer {
@@ -476,8 +477,10 @@
     }
 
     .extraInfo {
-        margin: 10px 5px;
+        margin: 5px 5px;
         padding: 10px 10px;
+        width: 27.4em;
+        height: 21.8em;
     }
 
     .category {
