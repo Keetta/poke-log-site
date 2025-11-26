@@ -190,6 +190,8 @@
     width: 25em;
     height: 15.2em;
     box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 .category {
@@ -208,7 +210,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 5px 0px;
+    margin-bottom: 3px;
 }
 
 .abilities {
@@ -255,8 +257,42 @@
 .height, .weight {
     border-radius: 30px;
     margin-top: 4px;
-    padding: 4px 25px;
+    padding: 2px 25px;
     background-color: #e4e4e4;
+}
+
+.evoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.evolutions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.evolutions p {
+    font-size: 10px;
+}
+
+.evoItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #e4e4e4;
+    border-radius: 50px;
+}
+
+.evoItem img {
+    display: flex;
+    width: 64px;
 }
 
 .description:hover {
