@@ -175,12 +175,22 @@
         const evoResp = await fetch(evoUrl);
         const evoData = await evoResp.json();
 
-        const evolutionNames = [];
+        const evolutionChain = [];
         let current = evoData.chain;
-        do {
-            evolutionNames.push(formatText(current.species.name));
+        while (current) {
+            const evoName = current.species.name;
+            const evoResp = await fetch(`https://pokeapi.co/api/v2/pokemon/${evoName}`);
+            const evoDataPoke = await evoResp.json();
+
+            const evoSprite = evoDataPoke.sprites.other['official-artwork'].front_default;
+
+            evolutionChain.push({
+                name: formatText(evoName),
+                sprite: evoSprite
+            });
+
             current = current.evolves_to[0];
-        } while (current);
+        }
 
         renderActivePokemon({
             name: pokemonData.name,
@@ -192,7 +202,7 @@
             abilities,
             height,
             weight,
-            evolution: evolutionNames
+            evolution: evolutionChain
         });
     };
 
@@ -248,7 +258,13 @@
             </div>
                 <div class="evoInfo">
                         <p>EVOLUTION</p>
-                        <p class="evolutions">${poke.evolution.join(' → ')}</p>
+                        <div class="evolutions">
+                            ${poke.evolution.map(e =>`
+                                <div class="evoItem">
+                                    <img src="${e.sprite}" alt="${e.name}">
+                                </div>`
+                                ).join('<span class="arrow">➜</span>')}
+                        </div>
                 </div>
         </div>
         `;
