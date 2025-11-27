@@ -2,7 +2,7 @@
 
     window.initPokedex = function() {
     const pokeContainer = document.querySelector("#pokeContainer");
-    const pokemonCount = 151;
+    const pokemonCount = 1025;
     let allPokemons = [];
 
     const typeIds = {
@@ -270,16 +270,50 @@
         `;
     };
 
-    function fitText(element, minSize = 12, maxSize = 14) {
+    function fitText(element, minSize = 8, maxSize = 14) {
         let fontSize = maxSize;
         element.style.fontSize = fontSize + "px";
 
-        while (element.scrollHeight > element.clientHeight && fontSize > minSize) {
+        element.style.height = "auto";
+
+        while (element.scrollHeight > 40 && fontSize > minSize) {
             fontSize -= 0.5;
             element.style.fontSize = fontSize + "px";
         }
+
+        if (element.scrollHeight > 40) {
+            element.style.fontSize = minSize + "px";
+        }
+
+        element.style.height = "40px";
     }
 
+    // Search Bar
+    const searchButton = document.querySelector(".pokedex-search-icon");
+    const input = document.getElementById("search");
+
+    function searchPokemon() {
+        const query = input.value.toLowerCase();
+
+        if (query.trim() === "") {
+                renderPokemons(allPokemons);
+                return;
+        }
+
+        const filtered = allPokemons.filter(poke =>
+                poke.name.startsWith(query)
+        );
+
+        renderPokemons(filtered);
+    }
+
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            searchPokemon();
+        }
+    });
+
+    searchButton.addEventListener("click", searchPokemon);
 
     window.sortPokemonsZA = sortPokemonsZA;
     window.sortPokemonsAZ = sortPokemonsAZ;
